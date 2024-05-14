@@ -1,0 +1,130 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стилі для заголовка */
+header {
+    background-color: #840303;
+    color: #fff;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 28px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-bar input {
+    padding: 8px;
+    
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.user-actions a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.user-actions .cart-link {
+    position: relative;
+}
+
+.user-actions .cart-link i {
+    margin-right: 5px;
+}
+
+
+.login-form {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 50px auto 0; /* Відступ зверху 50px, потім автоматичне центрування по горизонталі */
+    background-color: #f2f2f2;
+}
+  
+.form-group {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+  
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+  
+.forgot-password {
+    display: inline-block;
+    margin-top: 10px;
+    color: #840303;
+    text-decoration: none;
+}
+  
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #840303;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+  
+.register-link {
+    color: #840303;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #840303;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
