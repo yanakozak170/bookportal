@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #840303;
+  color: #fff;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 28px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-bar input {
+    padding: 8px;
+
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.user-actions a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.user-actions .cart-link {
+    position: relative;
+}
+
+.user-actions .cart-link i {
+  margin-right: 5px;
+}
+
+.course-info {
+  text-align: center;
+}
+
+.about-us {
+  margin-left: 20px;
+}
+
+.course-info h3 {
+  font-size: 34px;
+}
+
+.course-info p {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.contact-links {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #840303;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #660202;
+}
+
+footer {
+  background-color: #840303;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
