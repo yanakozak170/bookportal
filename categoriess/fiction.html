@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>БукПортал - Про нас</title>
-  <link rel="stylesheet" href="info.css">
+  <title>БукПортал</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header>
@@ -15,7 +15,7 @@
         <li class="category-dropdown">
           <a href="#">Категорії</a>
           <ul class="dropdown-content">
-            <li><a href="../categoriess/fiction.html">Художня література</a></li>
+            <li><a href="fiction.html">Художня література</a></li>
             <li><a href="../categoriess/detective.html">Детективи</a></li>
             <li><a href="../categoriess/romance.html">Романтика</a></li>
             <li><a href="../categoriess/psychology.html">Психологія</a></li>
@@ -25,7 +25,7 @@
             <li><a href="../categoriess/self-development.html">Саморозвиток, мотивація</a></li>
           </ul>
         </li>
-        <li><a href="info.html">Про нас</a></li>
+        <li><a href="../info/info.html">Про нас</a></li>
       </ul>
       <div class="search-bar">
         <input type="text" placeholder="Пошук книг">
@@ -41,17 +41,19 @@
   </header>
 
   <main>
-    <section class="about-us">
-      <div class="course-info">
-        <h3>КУРСОВА РОБОТА</h3>
-        <p>ВИКОНАЛИ: Козак Яна та Чепенюк Анастасія</p>
-        <p>ГРУПА: IO-23</p>
-        <div class="contact-links">
-          <a href="https://t.me/kozak_yana" target="_blank" class="btn">Telegram Яни</a>
-          <a href="https://t.me/nstchpnk" target="_blank" class="btn">Telegram Анастасії</a>
-          <a href="https://github.com/yanakozak170/bookportal" target="_blank" class="btn">GitHub</a>
-        </div>
-      </div>
+    <section class="fiction">
+      <h2>Художня література</h2>
+      <section class="book-list">
+  <div class="book-item">
+    <a href="book-details.html">
+      <img src="../photo/Я бачу, вас цікавить пітьма.jpg" alt="Я бачу, вас цікавить пітьма">
+      <h3>Я бачу, вас цікавить пітьма</h3>
+    </a>
+    <p class="price">500 грн</p>
+    <button class="add-to-cart">В корзину</button>
+  </div>
+  <!-- Додавайте інші книжки тут, з відповідними деталями -->
+</section>
     </section>
   </main>
 
