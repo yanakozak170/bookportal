@@ -198,3 +198,75 @@ a {
 .category-dropdown .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
+
+.book-details {
+  display: flex;
+  margin: 40px;
+}
+
+.book-cover img {
+  max-width: 300px;
+  height: auto;
+}
+
+.book-cover img.small-cover {
+  max-width: 200px;
+}
+
+.book-info {
+  margin-left: 40px;
+}
+
+.book-info h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.book-info .author {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.book-info .price {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.book-info .add-to-cart {
+  background-color: #840303;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.book-info .description {
+  margin-top: 40px;
+}
+
+/* Стилі для додаткових елементів */
+.book-info section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.book-info section:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #840303;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.book-info section p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+.spacing {
+  height: 80px; /* Висота білого простору */
+}
