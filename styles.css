@@ -39,35 +39,8 @@ nav a {
     text-decoration: none;
 }
 
-/* Змінюємо стилі для відображення вікна категорій при наведенні */
-.category-dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.category-dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.category-dropdown .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.category-dropdown .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-
 .search-bar input {
     padding: 8px;
-
 }
 
 .search-bar button {
@@ -158,4 +131,67 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+/* Стилі для списку книг */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.book-item {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-item img {
+  max-width: 150px;
+  height: auto;
+}
+
+.book-item h3 {
+  margin-top: 10px;
+}
+
+.book-item .price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-item .add-to-cart {
+  background-color: #840303;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* Змінюємо стилі для відображення вікна категорій при наведенні */
+.category-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.category-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.category-dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.category-dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
 }
