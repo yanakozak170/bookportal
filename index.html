@@ -27,9 +27,10 @@
         <li><a href="info/info.html">Про нас</a></li>
       </ul>
       <div class="search-bar">
-        <input type="text" placeholder="Пошук книг">
-        <button>Шукати</button>
+        <input type="text" id="searchInput" placeholder="Пошук книг">
+        <button onclick="performSearch()">Шукати</button>
       </div>
+      <div id="searchResults" class="dropdown-content"></div>
       <div class="user-actions">
         <a href="cart.html" class="cart-link">
           <i class="fas fa-shopping-cart"></i> Корзина
@@ -168,5 +169,6 @@
   <footer>
     <p>&copy; 2024 Книжковий Інтернет-Магазин</p>
   </footer>
+  <script src="scripts.js"></script>
 </body>
 </html>
