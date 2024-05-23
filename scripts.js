@@ -1,15 +1,31 @@
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
 
-// Масив об'єктів з інформацією про книги
 const books = [
-  { title: 'Я бачу, вас цікавить пітьма', author: 'Джон Марс', category: 'Детективи', cover: 'photo/Я%20бачу,%20вас%20цікавить%20пітьма.jpg', price: 500 },
-  { title: 'Двір крил і руїн', author: 'Сара Дж. Маас', category: 'Фентезі', cover: 'photo/Двір%20крил%20і%20руїн.jpg', price: 460 },
-  { title: 'Атомні звички', author: 'Джеймс Клір', category: 'Психологія', cover: 'photo/Атомні%20звички.jpg', price: 375 },
-  // Додайте інші книги зі своєї бази даних
+  { title: 'Я бачу, вас цікавить пітьма', author: 'Джон Марс', category: 'Детективи', cover: 'photo/Я%20бачу,%20вас%20цікавить%20пітьма.jpg', price: 500, link: 'categoriess/detective/isee.html' },
+  { title: 'Таємна історія', author: 'Донна Тартт', category: 'Детективи', cover: 'photo/Таємна%20історія.jpg', price: 450, link: 'categoriess/detective/secret.html' },
+  { title: 'Зелена миля', author: 'Стівен Кінг', category: 'Детективи', cover: 'photo/Зелена%20миля.jpg', price: 400, link: 'categoriess/detective/green.html' },
+  { title: 'Двір крил і руїн', author: 'Сара Дж. Маас', category: 'Фентезі', cover: 'photo/Двір%20крил%20і%20руїн.jpg', price: 460, link: 'categoriess/fantasy/courtyardofwingsandruins.html' },
+  { title: 'Танець недоумка', author: 'Ілларіон Павлюк', category: 'Фентезі', cover: 'photo/Танець%20недоумка.jpg', price: 405, link: 'categoriess/fantasy/thedanceisstupid.html' },
+  { title: 'Месія Дюни', author: 'Френк Герберт', category: 'Фентезі', cover: 'photo/Месія%20Дюни.jpg', price: 450, link: 'categoriess/fantasy/messiahDune.html' },
+  { title: 'Задивляюсь у твої зіниці', author: 'Василь Симоненко', category: 'Поезія', cover: 'photo/Задивляюсь%20у%20твої%20зіниці.jpg', price: 320, link: 'categoriess/poetry/lookintoyourpupils.html' },
+  { title: 'Молоко і мед', author: 'Рупі Каур', category: 'Поезія', cover: 'photo/Молоко%20і%20мед.jpg', price: 290, link: 'categoriess/poetry/milkandhoney.html' },
+  { title: 'Гора і квітка', author: 'Микола Воробйов', category: 'Поезія', cover: 'photo/Гора%20і%20квітка.jpg', price: 290, link: 'categoriess/poetry/mountainandflower.html' },
+  { title: 'Атомні звички', author: 'Джеймс Клір', category: 'Психологія', cover: 'photo/Атомні%20звички.jpg', price: 375, link: 'categoriess/psychology/atomni.html' },
+  { title: 'Стіни в моїй голові', author: 'Світлана Алексієвич', category: 'Психологія', cover: 'photo/Стіни%20в%20моїй%20голові.png', price: 275, link: 'categoriess/psychology/wallsinmyhead.html' },
+  { title: 'Мистецтво говорити', author: 'Дейл Карнегі', category: 'Психологія', cover: 'photo/Мистецтво%20говорити.jpg', price: 350, link: 'categoriess/psychology/artofspeaking.html' },
+  { title: 'Залишся, якщо кохаєш', author: 'Пенелопа Ворд', category: 'Романтика', cover: 'photo/Залишся,%20якщо%20кохаєш.jpg', price: 330, link: 'categoriess/romance/iflove.html' },
+  { title: 'Панк 57', author: 'Пенелопа Дуглас', category: 'Романтика', cover: 'photo/Панк%2057.jpg', price: 350, link: 'categoriess/romance/pank.html' },
+  { title: 'Гіпотеза кохання', author: 'Алі Гейзелвуд', category: 'Романтика', cover: 'photo/Гіпотеза%20кохання.jpg', price: 320, link: 'categoriess/romance/hypothesis.html' },
+  { title: 'Кафе на краю світу', author: 'Джон Стрелецький', category: 'Саморозвиток, мотивація', cover: 'photo/Кафе%20на%20краю%20світу.jpg', price: 180, link: 'categoriess/self-development/cafe.html' },
+  { title: 'Думай і багатій', author: 'Наполеон Гілл', category: 'Саморозвиток, мотивація', cover: 'photo/Думай%20і%20багатій.jpg', price: 320, link: 'categoriess/self-development/think.html' },
+  { title: 'Приборкати страх', author: 'Сьюзен Джефферс', category: 'Саморозвиток, мотивація', cover: 'photo/Приборкати%20страх.jpg', price: 280, link: 'categoriess/self-development/tamefear.html' },
+  { title: 'Не озирайся і мовчи', author: 'Макс Кідрук', category: 'Трилери, жахи', cover: 'photo/Не%20озирайся%20і%20мовчи.jpg', price: 280, link: 'categoriess/thriller-horror/dontlookback.html' },
+  { title: 'Білий попіл', author: 'Ілларіон Павлюк', category: 'Трилери, жахи', cover: 'photo/Білий%20попіл.jpg', price: 245, link: 'categoriess/thriller-horror/whiteash.html' },
+  { title: 'Служниця', author: 'Фіона Бартон', category: 'Трилери, жахи', cover: 'photo/Служниця.png', price: 320, link: 'categoriess/thriller-horror/maid.html' }
 ];
 
-// Функція для відображення результатів пошуку
+
 function displaySearchResults(results) {
   searchResults.innerHTML = '';
   if (results.length === 0) {
@@ -19,19 +35,21 @@ function displaySearchResults(results) {
       const bookElement = document.createElement('div');
       bookElement.classList.add('book-item');
       bookElement.innerHTML = `
-        <img src="${book.cover}" alt="${book.title}">
-        <div class="book-details">
-          <h3>${book.title}</h3>
-          <p>Автор: ${book.author}</p>
-          <p>Ціна: ${book.price} грн</p>
-        </div>
+        <a href="${book.link}">
+          <img src="${book.cover}" alt="${book.title}">
+          <div class="book-details">
+            <h3>${book.title}</h3>
+            <p>Автор: ${book.author}</p>
+            <p>Ціна: ${book.price} грн</p>
+          </div>
+        </a>
       `;
       searchResults.appendChild(bookElement);
     });
   }
 }
 
-// Функція для пошуку книг
+
 function performSearch() {
   const searchTerm = searchInput.value.toLowerCase();
   const results = books.filter(book => {
@@ -43,7 +61,6 @@ function performSearch() {
   displaySearchResults(results);
 }
 
-// Показуємо/приховуємо вікно пошуку залежно від наявності введеного тексту
 searchInput.addEventListener('input', () => {
   if (searchInput.value.trim() !== '') {
     searchResults.classList.add('show');
@@ -54,7 +71,6 @@ searchInput.addEventListener('input', () => {
   }
 });
 
-// Приховуємо результати при кліку поза вікном пошуку
 document.addEventListener('click', (event) => {
   if (!event.target.closest('.search-bar')) {
     searchResults.classList.remove('show');

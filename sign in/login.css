@@ -65,23 +65,24 @@ nav a {
 }
 
 .search-bar {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .search-bar input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
 }
 
 .search-bar button {
-  padding: 8px 16px;
-  background-color: #555;
-  color: #fff;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
+    padding: 8px 16px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
 }
 
 .user-actions a {
