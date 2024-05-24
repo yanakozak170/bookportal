@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>БукПортал-Кошик</title>
+  <title>БукПортал</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .cart {
+      text-align: center;
+    }
+    .cart-content {
+      text-transform: uppercase;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -32,7 +40,7 @@
       </div>
       <div class="user-actions">
         <a href="cart.html" class="cart-link">
-          <i class="fas fa-shopping-cart"></i> Корзина
+          <i class="fas fa-shopping-cart"></i>
         </a>
         <a href="sign in/login.html" class="login-link">Вхід</a>
       </div>
@@ -41,8 +49,10 @@
 
   <main>
     <section class="cart">
-      <h2>Корзина</h2>
-      <!-- Тут буде контент для сторінки "Кошик" -->
+      <div class="cart-content">
+        <p style="font-size: 24px;">ВАШ КОШИК ПОРОЖНІЙ</p>
+        <p>Не вагайтеся і перегляньте наш каталог, щоб знайти щось гарне для Вас!</p>
+      </div>
     </section>
   </main>
 
