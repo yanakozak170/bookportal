@@ -1,6 +1,12 @@
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
 
+// Отримати базовий шлях поточного місцезнаходження сторінки
+const currentPath = window.location.pathname;
+
+// Видалити останній сегмент шляху (назву файлу)
+const basePath = currentPath.substring(0, currentPath.lastIndexOf('/categoriess') + 1);
+
 const books = [
   { title: 'Я бачу, вас цікавить пітьма', author: 'Джон Марс', category: 'Детективи', cover: 'photo/Я%20бачу,%20вас%20цікавить%20пітьма.jpg', price: 500, link: 'categoriess/detective/isee.html' },
   { title: 'Таємна історія', author: 'Донна Тартт', category: 'Детективи', cover: 'photo/Таємна%20історія.jpg', price: 450, link: 'categoriess/detective/secret.html' },
@@ -25,6 +31,25 @@ const books = [
   { title: 'Служниця', author: 'Фіона Бартон', category: 'Трилери, жахи', cover: 'photo/Служниця.png', price: 320, link: 'categoriess/thriller-horror/maid.html' }
 ];
 
+// Функція для динамічного створення посилання на книгу з урахуванням базового шляху
+function createDynamicBookLink(relativePath) {
+  // Переконайтеся, що шлях є відносним до базової директорії
+  if (relativePath.startsWith('categoriess/')) {
+    return `${basePath}${relativePath}`;
+  } else {
+    return relativePath;
+  }
+}
+
+// Функція для динамічного створення шляху до фотографії з урахуванням базового шляху
+function createDynamicPhotoPath(relativePath) {
+  // Переконайтеся, що шлях є відносним до базової директорії
+  if (relativePath.startsWith('photo/')) {
+    return `${basePath}${relativePath}`;
+  } else {
+    return relativePath;
+  }
+}
 
 function displaySearchResults(results) {
   searchResults.innerHTML = '';
@@ -35,20 +60,22 @@ function displaySearchResults(results) {
       const bookElement = document.createElement('div');
       bookElement.classList.add('book-item');
       bookElement.innerHTML = `
-        <a href="${book.link}">
-          <img src="${book.cover}" alt="${book.title}">
+        <div>
+          <img src="${createDynamicPhotoPath(book.cover)}" alt="${book.title}">
           <div class="book-details">
             <h3>${book.title}</h3>
             <p>Автор: ${book.author}</p>
             <p>Ціна: ${book.price} грн</p>
           </div>
-        </a>
+        </div>
       `;
+      bookElement.addEventListener('click', () => {
+        window.location.href = createDynamicBookLink(book.link);
+      });
       searchResults.appendChild(bookElement);
     });
   }
 }
-
 
 function performSearch() {
   const searchTerm = searchInput.value.toLowerCase();
@@ -67,12 +94,11 @@ searchInput.addEventListener('input', () => {
     performSearch();
   } else {
     searchResults.classList.remove('show');
-    searchResults.innerHTML = '';
   }
 });
 
 document.addEventListener('click', (event) => {
-  if (!event.target.closest('.search-bar')) {
+  if (!searchResults.contains(event.target) && event.target !== searchInput) {
     searchResults.classList.remove('show');
   }
 });
