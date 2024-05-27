@@ -11,6 +11,22 @@
     }
     .cart-content {
       text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cart-item {
+      display: flex;
+      margin: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .cart-item img {
+      max-width: 100px;
+      margin-right: 10px;
+    }
+    .cart-item-info {
+      text-align: left;
     }
   </style>
 </head>
@@ -51,8 +67,7 @@
   <main>
     <section class="cart">
       <div class="cart-content">
-        <p style="font-size: 24px;">ВАШ КОШИК ПОРОЖНІЙ</p>
-        <p>Не вагайтеся і перегляньте наш каталог, щоб знайти щось гарне для Вас!</p>
+        <!-- Контент корзини буде згенеровано скриптом -->
       </div>
     </section>
   </main>
