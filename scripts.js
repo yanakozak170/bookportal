@@ -103,4 +103,58 @@ document.addEventListener('click', (event) => {
   }
 });
 
+function addToCart(book) {
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  cartItems.push(book);
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  alert('Книга додана до корзини');
+}
+
+// Отримання книг з кошика
+function getCartItems() {
+  return JSON.parse(localStorage.getItem('cartItems')) || [];
+}
+
+// Видалення книги з кошика
+function removeFromCart(bookTitle) {
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  cartItems = cartItems.filter(item => item.title !== bookTitle);
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  alert('Книгу видалено з корзини! Оновіть сторінку');
+}
+
+// Відображення книг у кошику
+// Функція, що відображає книгу в корзині
+function displayCartItems() {
+  const cartItems = getCartItems();
+  const cartContent = document.querySelector('.cart-content');
+
+  if (cartItems.length === 0) {
+    cartContent.innerHTML = `
+      <p style="font-size: 24px;">ВАШ КОШИК ПОРОЖНІЙ</p>
+      <p>Не вагайтеся і перегляньте наш каталог, щоб знайти щось гарне для Вас!</p>
+    `;
+  } else {
+    cartContent.innerHTML = cartItems.map(item => `
+      <div class="cart-item">
+        <a href="${item.link}"><img src="${item.cover}" alt="${item.title}"></a>
+        <div class="cart-item-info">
+          <a href="${item.link}"><h3>${item.title}</h3></a>
+          <p>Автор: ${item.author}</p>
+          <p>Ціна: ${item.price} грн</p>
+          <button onclick="removeFromCart('${item.title}')">Видалити</button>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+
+// Додаємо слухача для завантаження сторінки корзини
+window.addEventListener('DOMContentLoaded', (event) => {
+  if (document.querySelector('.cart-content')) {
+    displayCartItems();
+  }
+});
+
 
