@@ -102,3 +102,5 @@ document.addEventListener('click', (event) => {
     searchResults.classList.remove('show');
   }
 });
+
+
