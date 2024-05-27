@@ -5,7 +5,7 @@ const searchResults = document.getElementById('searchResults');
 const currentPath = window.location.pathname;
 
 // Видалити останній сегмент шляху (назву файлу)
-const basePath = currentPath.substring(0, currentPath.lastIndexOf('/categoriess') + 1);
+const basePath = currentPath.substring(0, currentPath.lastIndexOf('/bookportal/') + 12);
 
 const books = [
   { title: 'Я бачу, вас цікавить пітьма', author: 'Джон Марс', category: 'Детективи', cover: 'photo/Я%20бачу,%20вас%20цікавить%20пітьма.jpg', price: 500, link: 'categoriess/detective/isee.html' },
