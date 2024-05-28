@@ -330,3 +330,14 @@ a {
 .spacing {
     height: 80px; /* Висота білого простору */
 }
+
+.cart-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
+}
