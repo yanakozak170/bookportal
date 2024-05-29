@@ -124,6 +124,17 @@ function removeFromCart(bookTitle) {
 }
 
 // Відображення книг у кошику
+function calculateTotalPrice() {
+  const cartItems = getCartItems();
+  let totalPrice = 0;
+
+  cartItems.forEach(item => {
+    totalPrice += item.price;
+  });
+
+  return totalPrice;
+}
+
 // Функція, що відображає книгу в корзині
 function displayCartItems() {
   const cartItems = getCartItems();
@@ -135,17 +146,21 @@ function displayCartItems() {
       <p>Не вагайтеся і перегляньте наш каталог, щоб знайти щось гарне для Вас!</p>
     `;
   } else {
-    cartContent.innerHTML = cartItems.map(item => `
-      <div class="cart-item">
-        <a href="${item.link}"><img src="${item.cover}" alt="${item.title}"></a>
-        <div class="cart-item-info">
-          <a href="${item.link}"><h3>${item.title}</h3></a>
-          <p>Автор: ${item.author}</p>
-          <p>Ціна: ${item.price} грн</p>
-          <button onclick="removeFromCart('${item.title}')">Видалити</button>
+    const totalPrice = calculateTotalPrice();
+    cartContent.innerHTML = `
+      ${cartItems.map(item => `
+        <div class="cart-item">
+          <a href="${item.link}"><img src="${item.cover}" alt="${item.title}"></a>
+          <div class="cart-item-info">
+            <a href="${item.link}"><h3>${item.title}</h3></a>
+            <p>Автор: ${item.author}</p>
+            <p>Ціна: ${item.price} грн</p>
+            <button onclick="removeFromCart('${item.title}')">Видалити</button>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `).join('')}
+      <div class="cart-total">Загальна сума: ${totalPrice} грн</div>
+    `;
   }
 }
 
