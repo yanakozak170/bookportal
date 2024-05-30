@@ -8,7 +8,7 @@ app = Flask(__name__, template_folder='.')
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="A1b3c29f7",  # Замініть на свій пароль
+    password="A1b3c29f7",
     database="bookportal"
 )
 cursor = db.cursor()
