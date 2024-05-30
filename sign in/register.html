@@ -3,21 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>БукПортал - Реєстрація</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Вхід</title>
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
   <header>
-    <!-- Навігаційне меню -->
+    <nav>
+      <div class="logo"><a href="../index.html">БукПортал</a></div>
+      <ul>
+        <li><a href="../index.html">Головна</a></li>
+        <li class="category-dropdown">
+          <a href="#">Категорії</a>
+          <ul class="dropdown-content">
+            <li><a href="../categoriess/detective/detective.html">Детективи</a></li>
+            <li><a href="../categoriess/romance/romance.html">Романтика</a></li>
+            <li><a href="../categoriess/psychology/psychology.html">Психологія</a></li>
+            <li><a href="../categoriess/thriller-horror/thriller-horror.html">Трилери, жахи</a></li>
+            <li><a href="../categoriess/poetry/poetry.html">Поезія</a></li>
+            <li><a href="../categoriess/fantasy/fantasy.html">Фентезі</a></li>
+            <li><a href="../categoriess/self-development/self-development.html">Саморозвиток, мотивація</a></li>
+          </ul>
+        </li>
+        <li><a href="../info/info.html">Про нас</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Пошук книг">
+        <button onclick="performSearch()">Шукати</button>
+        <div id="searchResults" class="dropdown-content"></div>
+      </div>
+      <div class="user-actions">
+        <a href="../cart.html" class="cart-link">
+          <i class="fas fa-shopping-cart"></i> Корзина
+        </a>
+        <a href="login.html" class="login-link">Вхід</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section class="register">
-      <h2>Реєстрація</h2>
-      <div class="register-form">
-        <h3>Створіть обліковий запис</h3>
-        <form>
-          <!-- Форма реєстрації -->
+    <section class="login">
+      <div class="login-form">
+        <h2>Реєстрація</h2>
+        <form action="/register" method="POST">
+          <div class="form-group">
+            <label for="username">Email</label>
+            <input type="text" id="username" name="username" required/>
+          </div>
+          <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" required/>
+          </div>
+          <button type="submit" class="btn">Зареєструватись</button>
         </form>
       </div>
     </section>
@@ -26,5 +62,6 @@
   <footer>
     <p>&copy; 2024 Книжковий Інтернет-Магазин</p>
   </footer>
+  <script src="../scripts.js"></script>
 </body>
 </html>
