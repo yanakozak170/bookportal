@@ -172,4 +172,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 });
 
+const orderButton = document.getElementById('oneClickOrderButton');
+    const modal = document.getElementById('orderModal');
+    const phonePrompt = document.getElementById('phonePrompt');
+    const phoneNumberInput = document.getElementById('phoneNumber');
+    const submitOrderButton = document.getElementById('submitOrderButton');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+
+    orderButton.onclick = function() {
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    function submitOrder() {
+      const phoneNumber = phoneNumberInput.value;
+      if (phoneNumber) {
+        phonePrompt.style.display = 'none';
+        phoneNumberInput.style.display = 'none';
+        submitOrderButton.style.display = 'none';
+        confirmationMessage.style.display = 'block';
+      } else {
+        alert('Будь ласка, введіть номер телефону.');
+      }
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+
 
