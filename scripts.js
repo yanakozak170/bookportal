@@ -160,7 +160,11 @@ function displayCartItems() {
         </div>
       `).join('')}
       <div class="cart-total">Загальна сума: ${totalPrice} грн</div>
+      <button id="clearCartButton">Очистити корзину</button>
     `;
+
+    const clearCartButton = document.getElementById('clearCartButton');
+    clearCartButton.addEventListener('click', clearCart);
   }
 }
 
@@ -205,4 +209,8 @@ const orderButton = document.getElementById('oneClickOrderButton');
       }
     }
 
-
+function clearCart() {
+  localStorage.removeItem('cartItems');
+  displayCartItems();
+}
+document.getElementById('clearCartButton').addEventListener('click', clearCart);
